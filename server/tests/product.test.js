@@ -1,14 +1,12 @@
 const request = require('supertest');
 const app = require('../src/app');
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+const productRoutes = require('../src/routes/product');
 
 describe('Product API Integration Tests', () => {
   let productId;
 
   afterAll(async () => {
-    await prisma.product.deleteMany();
-    await prisma.$disconnect();
+    productRoutes._reset();
   });
 
   it('should create a new product', async () => {

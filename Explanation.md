@@ -4,7 +4,7 @@
 ShopSmart is built using a modern decoupled architecture:
 - **Frontend**: A React single-page application built with Vite. It interacts with the backend via RESTful API calls using Axios. It uses functional components and hooks for state management.
 - **Backend**: A Node.js and Express REST API backend that handles routing, business logic, and database interactions.
-- **Database**: SQLite database managed via Prisma ORM for type-safe queries and straightforward schema evolution.
+- **Database**: An in-memory data store using simple Javascript arrays to keep the backend lightweight and simple without external database dependencies.
 
 ## Workflow
 1. **GitHub Actions (CI)**: On every push or pull request to the `main` branch, a CI pipeline is triggered. This pipeline automatically installs dependencies, lints the codebase (ESLint/Prettier), and runs the unit tests (Vitest for frontend, Jest for backend) to ensure continuous quality.
