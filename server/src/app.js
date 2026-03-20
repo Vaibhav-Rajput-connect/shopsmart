@@ -7,6 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Routes
+const productRoutes = require('./routes/product');
+app.use('/api/products', productRoutes);
+
 // Health Check Route
 app.get('/api/health', (req, res) => {
   res.json({
